@@ -22,3 +22,6 @@ def fizz_buzz(request):
             return HttpResponse(a)
     x = num_x(1)
     return HttpResponse(x)
+
+def second(request):
+    return HttpResponse("test 2 page 222")
