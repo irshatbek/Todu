@@ -25,3 +25,12 @@ def fizz_buzz(request):
 
 def second(request):
     return HttpResponse("test 2 page 222")
+
+def info_one(request):
+    return render(request, "info.html")
+
+def info_change(request):
+    return render(request, "info_change.html")
+
+def info_dell(request):
+    return render(request, "info_dell.html")
