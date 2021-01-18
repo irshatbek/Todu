@@ -105,6 +105,14 @@ section{
   cursor: pointer;
 }
 
+/* Для магазина книг */
+.boxOne{
+  border: 2px solid red;
+}
+.boxTwo{
+  border: 2px solis red;
+}
+
 /*
 /* The container */
 /* .container {

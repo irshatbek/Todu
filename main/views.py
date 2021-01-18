@@ -36,3 +36,6 @@ def info_change(request):
 
 def info_dell(request):
     return render(request, "info_dell.html")
+
+def bookshop(request):
+    return render(request, "bookshop.html")
