@@ -1,5 +1,5 @@
-from django.shortcuts import render, HttpResponse
-from . models import ToDo
+from django.shortcuts import render, HttpResponse, redirect
+from .models import ToDo
 
 def homepage(request):
     return render(request, "index.html")
@@ -39,3 +39,10 @@ def info_dell(request):
 
 def bookshop(request):
     return render(request, "bookshop.html")
+
+def add_todo(request):
+    form = request.POST
+    text = form["todo_text"]
+    todo = ToDo (text=text)
+    todo.save()
+    return redirect(test)
