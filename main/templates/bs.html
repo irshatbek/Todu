@@ -74,25 +74,24 @@
           {% for book_shop in book_shop %}
             
                 <div class="boxOne">
-                <h1 class="titleBook">{{ book_shop.text_Title }}</h1>
-                <div class="boxTwo">
-                <h3 class="subtitleBox">{{ book_shop.text_Subtitle }}</h3>
-                <p>Описание <h4>{{ book_shop.text_Description }}</h4></p>
-                <p>Цена: <h4>{{ book_shop.text_Price }}</h4> </p>
-                <p>Жанр: <h4>{{ book_shop.text_Genre }}</h4></p>
-                <p>Автор: <h4>{{ book_shop.text_Author }}</h4></p>
-                <p>Год выхода книги: <h4>{{ book_shop.text_Year }}</h4></p>
-                <p>Дата добовления книги на сайт: <h4>{{ book_shop.created_at }}</h4></p>
-                </div>
+                    <h1 class="titleBook">{{ book_shop.text_Title }}</h1>
+                    <div class="boxTwo">
+                        <h3 class="subtitleBox">{{ book_shop.text_Subtitle }}</h3>
+                        <p>Описание <h4>{{ book_shop.text_Description }}</h4></p>
+                        <p>Цена: <h4>{{ book_shop.text_Price }}</h4> </p>
+                        <p>Жанр: <h4>{{ book_shop.text_Genre }}</h4></p>
+                        <p>Автор: <h4>{{ book_shop.text_Author }}</h4></p>
+                        <p>Год выхода книги: <h4>{{ book_shop.text_Year }}</h4></p>
+                        <p>Дата добовления книги на сайт: <h4>{{ book_shop.created_at }}</h4></p>
+                        <div class="fotter">
+                            <img src="{% static './icons/unmarked1.png' %}">
+                            <img src="{% static './icons/delete1.png' %}">
+                        </div>
+                     </div>
+                
             </div>
-  
-
-          {% endfor %}
-
+          {% endfor %}  
       </div>
-   
-
-
   </section>
   <body>
 

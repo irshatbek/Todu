@@ -44,8 +44,8 @@
             <div class="todo_item_footer">
               <p>{{ todo.created_at }}</p>
               <div class="action_buttons">
-                {% if todo.is_fvorite %}
-                  <a href="{% url 'mark-todo' todo.id %}"><img src="{% static './icons/marked1.png' %}"></a>
+                {% if todo.is_favorite %}
+                  <a href="{% url 'unmark-todo' todo.id %}"><img src="{% static './icons/marked1.png' %}"></a>
                 {% else %}
                   <a href="{% url 'mark-todo' todo.id %}"><img src="{% static './icons/unmarked1.png' %}"></a>
                 {% endif %}

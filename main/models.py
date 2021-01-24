@@ -16,3 +16,4 @@ class BookShop(models.Model):
     text_Author = models.CharField(max_length=100)
     text_Year = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
+    is_favorite = models.BooleanField(default=False)
