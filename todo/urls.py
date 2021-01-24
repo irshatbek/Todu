@@ -26,13 +26,12 @@ urlpatterns = [
     path("", homepage, name = "home"),
     path("test/", test, name = "test"),
     path("fizz_buzz/", fizz_buzz, name = "fizz_buzz"),
-    path("test2/", second),
     path("info_one/", info_one, name = "info_one"),
     path("info_change/", info_change, name = "info_change"),
     path("info_dell/", info_dell, name = "info_dell"),
     path("bookshop/", bookshop, name = "bookshop"),
     path("add-todo/", add_todo, name= "add-todo"),
-    path("add-title/", add_title, name="add-title"),
-    path("bs/", bs_f, name="bs"),
+    path("add-book/", add_book, name="add-book"),
+    path("bs/", bs, name="bs"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

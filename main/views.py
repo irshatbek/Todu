@@ -10,6 +10,13 @@ def test(request):
     todo_list = ToDo.objects.all()
     return render(request, "test.html", {"todo_list": todo_list})
 
+def add_todo(request):
+    form = request.POST
+    text = form["todo_text"]
+    todo = ToDo (text=text)
+    todo.save()
+    return redirect(test)
+
 def fizz_buzz(request):
     def num_x(a):
     
@@ -42,20 +49,22 @@ def info_dell(request):
 def bookshop(request):
     return render(request, "bookshop.html")
 
-def add_todo(request):
-    form = request.POST
-    text = form["todo_text"]
-    todo = ToDo (text=text)
-    todo.save()
-    return redirect(test)
 
-def add_title(request):
-    form = request.POST
-    text = form["title_text"]
-    todo = ToDo (text=text)
-    todo.save()
-    return redirect(test)
 
-def bs_f(request):
+def add_book(request):
+
+    form = request.POST
+    text_Tit = form["title_text"]
+    text_Sub = form["subtitle_text"]
+    text_Des = form["description_text"]
+    text_Pri = form["price_text"]
+    text_Gen = form["genre_text"]
+    text_Auth = form["author_text"]
+    text_Year = form["year"]
+    book_shop = BookShop(text_Title=text_Tit, text_Subtitle=text_Sub, text_Description=text_Des, text_Price=text_Pri, text_Genre=text_Gen, text_Author=text_Auth, text_Year=text_Year)
+    book_shop.save()
+    return redirect(bs)
+
+def bs(request):
     book_shop = BookShop.objects.all()
     return render(request, "bs.html", {"book_shop": book_shop})
