@@ -32,6 +32,19 @@
     margin-bottom: 20px;
 }
 
+.boxOne, .marked{
+  border: 2px solid rgb(179, 90, 90);
+  border-radius: 15px;
+  height: auto;
+  width: 24%;
+  padding: 10px 10px;
+  margin: 20px 10px;
+  background-color:  rgb(41, 41, 184);
+  color: white;
+  box-shadow: 0 0 10px rgba(171, 147, 147, 0.5);
+  margin-bottom: 20px;
+}
+
 .heder_one{
     text-align: center;
 }

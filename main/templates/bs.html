@@ -73,7 +73,11 @@
       <div class="container">
           {% for book_shop in book_shop %}
             
-                <div class="boxOne">
+                <div class="boxOne
+                    {% if book_shop.is_favorite %}
+                    marked
+                    {% endif %}
+                ">
                     <h1 class="titleBook">{{ book_shop.text_Title }}</h1>
                     <div class="boxTwo">
                         <h3 class="subtitleBox">{{ book_shop.text_Subtitle }}</h3>
@@ -84,8 +88,20 @@
                         <p>Год выхода книги: <h4>{{ book_shop.text_Year }}</h4></p>
                         <p>Дата добовления книги на сайт: <h4>{{ book_shop.created_at }}</h4></p>
                         <div class="fotter">
-                            <img src="{% static './icons/unmarked1.png' %}">
-                            <img src="{% static './icons/delete1.png' %}">
+                            {% if book_shop.is_favorite %}
+                                <a href="{% url 'unmark-book' book_shop.id %}"><img src="{% static './icons/marked1.png' %}"></a>
+                            {% else %}
+                                <a href="{% url 'mark-book' book_shop.id %}"><img src="{% static './icons/unmarked1.png' %}"></a>
+                            {% endif %}
+                                <a href="{% url 'delete-book' book_shop.id %}"><img src="{% static './icons/delete1.png' %}"></a>
+                                <a href="{% url 'detail-book' book_shop.id %}">Узнать больше</a>
+                            <style>
+                                img{
+                                    height: 30px;
+                                    width: 30px;
+                                    position: bottom;
+                                }
+                            </style>
                         </div>
                      </div>
                 

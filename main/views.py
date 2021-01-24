@@ -88,3 +88,23 @@ def add_book(request):
 def bs(request):
     book_shop = BookShop.objects.all()
     return render(request, "bs.html", {"book_shop": book_shop})
+
+def delete_book(request, id):
+    book = BookShop.objects.get(id=id)
+    book.delete()
+    return redirect(bs)
+
+def mark_book(request, id):
+    book = BookShop.objects.get(id=id)
+    book.is_favorite = True
+    book.save()
+    return redirect(bs)
+
+def unmark_book(request, id):
+    book = BookShop.objects.get(id=id)
+    book.is_favorite = False
+    book.save()
+    return redirect(bs)
+
+def detail_book(request, id):
+    return render(request, "bookshop.html")
