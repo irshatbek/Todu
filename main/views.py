@@ -1,5 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import ToDo
+from .models import BookShop
+
 
 def homepage(request):
     return render(request, "index.html")
@@ -53,3 +55,7 @@ def add_title(request):
     todo = ToDo (text=text)
     todo.save()
     return redirect(test)
+
+def bs_f(request):
+    book_shop = BookShop.objects.all()
+    return render(request, "bs.html", {"book_shop": book_shop})

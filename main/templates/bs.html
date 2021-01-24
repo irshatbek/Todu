@@ -1,0 +1,93 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'styles/bookstor.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
+  </head>
+
+    <div class="heder_one">
+      <h1>Книжный магазин</h1>
+    </div>
+    <div class="create_container">
+      <form action="{% url 'add-title' %}" method="POST">
+        {% csrf_token %}
+        <input
+          class="create_title"
+          type="text"
+          placeholder="Заголовок"
+          name="title_text"
+        />
+   
+        <input
+          class="create_subtitle"
+          type="text"
+          placeholder="Подзаголовок"
+          name="subtitle_text"
+        />
+        <input
+          class="create_description"
+          type="text"
+          placeholder="Описание"
+          name="description_text"
+        />
+        <input
+          class="create_price"
+          type="text"
+          placeholder="Цена"
+          name="price_text"
+        />
+        <input
+          class="create_genre"
+          type="text"
+          placeholder="Жанр"
+          name="genre_text"
+        />
+        <input
+          class="create_author"
+          type="text"
+          placeholder="Автор"
+          name="author_text"
+        />
+        <input
+          class="create_year"
+          type="text"
+          placeholder="Год выхода книги"
+          name="year"
+        />
+      </form>
+
+      <button class="create_button">Добавить книгу</button>
+    </div>
+    <section>
+      <div class="container">
+          {% for book_shop in book_shop %}
+            
+                <div class="boxOne">
+                <h1 class="titleBook">Заголовок: {{ book_shop.text_Title }}</h1>
+                <div class="boxTwo">
+                <h2 class="subtitleBox">Подзаголовок {{ book_shop.text_Subtitle }}</h2>
+                <h5>Описание {{ book_shop.text_Description }}</h5>
+                <h4>Цена: {{ book_shop.text_Price }}</h4>
+                <h5>Жанр: {{ book_shop.text_Genre }}</h5>
+                <h5>Автор: {{ book_shop.text_Author }}</h5>
+                <h5>Год выхода книги: {{ book_shop.text_Year }}</h5>
+                <h5>Дата добовления книги на сайт: {{ book_shop.created_at }}</h5>
+                </div>
+            </div>
+  
+
+          {% endfor %}
+
+      </div>
+   
+
+
+  </section>
+  <body>
+
+  </body>
+</html>
