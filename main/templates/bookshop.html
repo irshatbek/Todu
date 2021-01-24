@@ -13,97 +13,57 @@
       <h1>Книжный магазин</h1>
     </div>
     <div class="create_container">
-      <input
-      class="create_input"
-      type="text"
-      placeholder="Заголовок"
-      />
-      <input
-      class="create_input"
-      type="text"
-      placeholder="Подзаголовок"
-      />
-      <input
-      class="create_input"
-      type="text"
-      placeholder="Описание"
-      />
-      <input
-      class="create_input"
-      type="text"
-      placeholder="Цена"
-      />
-      <input
-      class="create_input"
-      type="text"
-      placeholder="Жанр"
-      />
-      <input
-      class="create_input"
-      type="text"
-      placeholder="Автор"
-      />
-      <input
-      class="create_input"
-      type="text"
-      placeholder="Год выхода книги"
-      />
+      <form action="{% url 'add-title' %}" method="POST">
+        {% csrf_token %}
+        <input
+          class="create_title"
+          type="text"
+          placeholder="Заголовок"
+          name="title_text"
+        />
+   
+        <input
+          class="create_subtitle"
+          type="text"
+          placeholder="Подзаголовок"
+          name="subtitle_text"
+        />
+        <input
+          class="create_description"
+          type="text"
+          placeholder="Описание"
+          name="description_text"
+        />
+        <input
+          class="create_price"
+          type="text"
+          placeholder="Цена"
+          name="price_text"
+        />
+        <input
+          class="create_genre"
+          type="text"
+          placeholder="Жанр"
+          name="genre_text"
+        />
+        <input
+          class="create_author"
+          type="text"
+          placeholder="Автор"
+          name="author_text"
+        />
+        <input
+          class="create_year"
+          type="text"
+          placeholder="Год выхода книги"
+          name="year"
+        />
+      </form>
+
       <button class="create_button">Добавить книгу</button>
     </div>
     <section>
       <div class="container">
-
-        <div class="boxOne">
-          <h1 class="titleBook">Заголовок</h1>
-          <div class="boxTwo">
-            <h2 class="subtitleBox">Подзаголовок</h2>
-            <h5>Описание</h5>
-            <h4>Цена</h4>
-            <h5>Жанр</h5>
-            <h5>Автор</h5>
-            <h5>Год выхода книги</h5>
-            <h5>Дата добовления книги на сайт</h5>
-          </div>
-        </div>
-
-        <div class="boxOne">
-          <h1 class="titleBook">Заголовок</h1>
-          <div class="boxTwo">
-            <h2 class="subtitleBox">Подзаголовок</h2>
-            <h5>Описание</h5>
-            <h4>Цена</h4>
-            <h5>Жанр</h5>
-            <h5>Автор</h5>
-            <h5>Год выхода книги</h5>
-            <h5>Дата добовления книги на сайт</h5>
-          </div>
-        </div>
-
-        <div class="boxOne">
-          <h1 class="titleBook">Заголовок</h1>
-          <div class="boxTwo">
-            <h2 class="subtitleBox">Подзаголовок</h2>
-            <h5>Описание</h5>
-            <h4>Цена</h4>
-            <h5>Жанр</h5>
-            <h5>Автор</h5>
-            <h5>Год выхода книги</h5>
-            <h5>Дата добовления книги на сайт</h5>
-          </div>
-        </div>
-
-        <div class="boxOne">
-          <h1 class="titleBook">Заголовок</h1>
-          <div class="boxTwo">
-            <h2 class="subtitleBox">Подзаголовок</h2>
-            <h5>Описание</h5>
-            <h4>Цена</h4>
-            <h5>Жанр</h5>
-            <h5>Автор</h5>
-            <h5>Год выхода книги</h5>
-            <h5>Дата добовления книги на сайт</h5>
-          </div>
-        </div>
 
         <div class="boxOne">
           <h1 class="titleBook">Заголовок</h1>

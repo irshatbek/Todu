@@ -5,3 +5,14 @@ class ToDo(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     is_closed = models.BooleanField(default=False)
     is_favorite = models.BooleanField(default=False)
+
+
+class BookShop(models.Model):
+    text_Title = models.CharField(max_length=100)
+    text_Subtitle = models.CharField(max_length=100)
+    text_Description = models.CharField(max_length=100)
+    text_Price = models.CharField(max_length=100)
+    text_Genre = models.CharField(max_length=100)
+    text_Author = models.CharField(max_length=100)
+    text_Year = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)

@@ -46,3 +46,10 @@ def add_todo(request):
     todo = ToDo (text=text)
     todo.save()
     return redirect(test)
+
+def add_title(request):
+    form = request.POST
+    text = form["title_text"]
+    todo = ToDo (text=text)
+    todo.save()
+    return redirect(test)
